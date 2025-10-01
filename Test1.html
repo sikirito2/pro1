@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfumuri Barbătești Solide Moldova | Cadoul Perfect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2d2d2d;
+            --light-gray: #6b6b6b;
+            --white: #f0f0f0;
+            --metallic: #b8b8b8;
+            --accent: #c9a96e; /* Metallic Gold/Bronze Accent */
+            --accent-dark: #a88c5a;
+            --bronze: #cd7f32;
+            
+            /* Light theme variables */
+            --bg-color: var(--black);
+            --text-color: var(--white);
+            --card-bg: var(--dark-gray);
+            --section-bg: var(--dark-gray);
+            --border-color: var(--medium-gray);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f5f5f5;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --section-bg: #e9e9e9;
+            --border-color: #dddddd;
+            --light-gray: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            background-color: var(--section-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-color);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-dark {
+            background-color: var(--black);
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-dark:hover {
+            background-color: var(--accent);
+            color: var(--black);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border: none;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        [data-theme="light"] header {
+            background-color: rgba(245, 245, 245, 0.95);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        [data-theme="light"] .logo {
+            color: var(--text-color);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        [data-theme="light"] nav ul li a {
+            color: var(--text-color);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        [data-theme="light"] .mobile-menu-btn {
+            color: var(--text-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1615634376655-8613c0c06e8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        /* Products Section: Modal Catalog Style */
+        .products {
+            background-color: var(--section-bg);
+        }
+
+        .category-tiles-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-tile {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* Animation fade-in on scroll */
+            opacity: 0; 
+            transform: translateY(30px);
+        }
+
+        .category-tile:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-tile h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .category-tile p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        .category-tile .view-btn {
+            display: inline-block;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .category-tile:hover .view-btn {
+            color: var(--accent);
+        }
+
+        /* Hidden area for product templates */
+        .hidden-product-templates {
+            display: none;
+        }
+        
+        /* Product Card Styles (Used inside the modal) */
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Apply this style when card is shown inside the modal */
+        .modal .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--bronze));
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 250px;
+            height: 250px;
+            object-fit: cover; 
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            color: var(--accent);
+        }
+
+        /* Modal Popup Styles */
+        .modal {
+            position: fixed;
+            z-index: 2000; /* Above everything */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8); /* Darker overlay */
+            display: none; /* Hidden by default */
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            animation: fadeInOverlay 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto; /* 5% top and bottom, centered horizontally */
+            padding: 25px;
+            border: 1px solid var(--accent);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            animation: fadeInContent 0.3s;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            background-color: var(--card-bg);
+            z-index: 10;
+            padding-top: 10px;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: var(--accent);
+        }
+
+        .close-btn {
+            color: var(--text-color);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: sticky;
+            top: 10px;
+            z-index: 20;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--bronze);
+            text-decoration: none;
+            transform: scale(1.1);
+        }
+
+        .modal-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 10px 0;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--bg-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .about-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        /* Gift Pack Section */
+        .gift-pack {
+            background-color: var(--section-bg);
+        }
+
+        .gift-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .gift-text {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .gift-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), var(--bronze));
+            color: var(--black);
+            padding: 5px 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            border-radius: 2px;
+        }
+
+        .gift-image-box {
+            height: 400px;
+            background-color: var(--medium-gray); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(30px);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gift-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--bg-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-left: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(30px);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--medium-gray), var(--dark-gray));
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Delivery Section */
+        .delivery {
+            background-color: var(--section-bg);
+        }
+
+        .delivery-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .delivery-item {
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .delivery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .delivery-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1585123388860-e08753bb2b39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cta .btn {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInContent {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-content, .gift-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text, .gift-text {
+                text-align: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-icons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: var(--card-bg);
+                transition: right 0.3s ease;
+                padding: 30px;
+                backdrop-filter: blur(10px);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .delivery-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-icons {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Mobile adjustments for Modal */
+            .modal-content {
+                width: 95%;
+                margin: 10px auto;
+                padding: 20px;
+            }
+            .modal-grid-container {
+                grid-template-columns: 1fr; /* One column on small screens */
+            }
+            .product-image {
+                max-width: 100%;
+                height: 200px;
+            }
+            
+            .theme-toggle {
+                bottom: 70px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            
+            .modal-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+    
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">PARFUM<span>SOLID</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#products">Produse</a></li>
+                    <li><a href="#about">Despre</a></li>
+                    <li><a href="#gift">Pachete Cadou</a></li>
+                    <li><a href="#testimonials">Recenzii</a></li>
+                    <li><a href="#delivery">Livrare</a></li>
+                    <li><a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă Acum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Parfumuri Barbătești Solide — Cadoul Perfect</h1>
+                <p>Pachete exclusive cu 2 sau 4 arome cu un cadou bonus</p>
+                <a href="#products" class="btn">Cumpără Acum</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Colectia Noastră</h2>
+
+            <div class="category-tiles-wrapper">
+                
+                <div class="category-tile" data-category="single" data-title="Parfumuri Singulare">
+                    <div class="tile-content">
+                        <h3>Parfumuri Singulare</h3>
+                        <p>150 MDL/buc</p>
+                        <span class="view-btn">Vezi Produsele <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="category-tile" data-category="double" data-title="Pachete cu 2 Parfumuri">
+                    <div class="tile-content">
+                        <h3>Pachete cu 2 Parfumuri</h3>
+                        <p>250 MDL/set</p>
+                        <span class="view-btn">Vezi Produsele <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="category-tile" data-category="quad" data-title="Pachete cu 4 Parfumuri">
+                    <div class="tile-content">
+                        <h3>Pachete cu 4 Parfumuri</h3>
+                        <p>de la 449 MDL/set</p>
+                        <span class="view-btn">Vezi Produsele <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden-product-templates">
+                <div class="product-card" data-category="single">
+                    <img src="https://picsum.photos/300/300?random=11" alt="Woody Essence" class="product-image">
+                    <h3>Woody Essence</h3>
+                    <p>Aromă lemnoasă profundă cu note de cedar și patchouli.</p>
+                    <div class="product-price">150 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="single">
+                    <img src="https://picsum.photos/300/300?random=12" alt="Ocean Breeze" class="product-image">
+                    <h3>Ocean Breeze</h3>
+                    <p>Notă proaspătă și acvatică cu accente marine.</p>
+                    <div class="product-price">150 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="single">
+                    <img src="https://picsum.photos/300/300?random=13" alt="Spice Trail" class="product-image">
+                    <h3>Spice Trail</h3>
+                    <p>Aromă picantă cu note de piper negru și cardamom.</p>
+                    <div class="product-price">150 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="single">
+                    <img src="https://picsum.photos/300/300?random=14" alt="Green Forest" class="product-image">
+                    <h3>Green Forest</h3>
+                    <p>Notă verde și terestră cu accente de muschi și ierburi.</p>
+                    <div class="product-price">150 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                
+                <div class="product-card" data-category="double">
+                    <img src="https://picsum.photos/300/300?random=21" alt="Adventure Duo Pack" class="product-image">
+                    <h3>Adventure Duo</h3>
+                    <p>Woody Essence + Ocean Breeze pentru aventuri zilnice.</p>
+                    <div class="product-price">250 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="double">
+                    <img src="https://picsum.photos/300/300?random=22" alt="Business Combo Pack" class="product-image">
+                    <h3>Business Combo</h3>
+                    <p>Spice Trail + Green Forest pentru întâlniri importante.</p>
+                    <div class="product-price">250 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="double">
+                    <img src="https://picsum.photos/300/300?random=23" alt="Evening Pair Pack" class="product-image">
+                    <h3>Evening Pair</h3>
+                    <p>Woody Essence + Spice Trail pentru seri elegante.</p>
+                    <div class="product-price">250 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+
+                <div class="product-card" data-category="quad">
+                    <img src="https://picsum.photos/300/300?random=41" alt="Complete Collection Pack" class="product-image">
+                    <h3>Complete Collection</h3>
+                    <p>Toate cele 4 arome + etui premium din piele (Cadou Bonus).</p>
+                    <div class="product-price">449 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="quad">
+                    <img src="https://picsum.photos/300/300?random=42" alt="Luxury Edition Pack" class="product-image">
+                    <h3>Luxury Edition</h3>
+                    <p>4 arome premium + etui din piele italiană.</p>
+                    <div class="product-price">499 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+                <div class="product-card" data-category="quad">
+                    <img src="https://picsum.photos/300/300?random=43" alt="Traveler's Set Pack" class="product-image">
+                    <h3>Traveler's Set</h3>
+                    <p>4 arome + etui de călătorie rezistent la apă.</p>
+                    <div class="product-price">479 MDL</div>
+                    <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-dark">Comandă</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-grid-container">
+                </div>
+        </div>
+    </div>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>De Ce Parfumuri Solide?</h2>
+                    <p>Parfumurile noastre solide combină comoditatea cu sofisticarea. Inspirate din cele mai populare arome barbătești din lume, sunt concepute pentru bărbatul modern care apreciază atât stilul, cât și substanța.</p>
+                    <p>Spre deosebire de spray-urile tradiționale, parfumurile noastre solide sunt prietenoase cu călătoriile, aprobate TSA și oferă un parfum subtil, de durată care evoluează pe parcursul zilei.</p>
+                </div>
+                <div class="about-icons">
+                    <div class="icon-item">
+                        <i class="fas fa-box-open"></i>
+                        <h4>Portabil</h4>
+                        <p>Design compact care încape oriunde</p>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>De Lungă Durată</h4>
+                        <p>8+ ore de parfum</p>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-gift"></i>
+                        <h4>Cadou Unic</h4>
+                        <p>Impressionează cu stil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gift-pack" id="gift">
+        <div class="container">
+            <div class="gift-content">
+                <div class="gift-text">
+                    <span class="gift-badge">Cel Mai Vândut</span>
+                    <h2>Idee de Cadou Perfectă</h2>
+                    <p>Colectia noastră premium de 4 pachete vine cu un cadou exclusiv - un elegant etui din piele pentru a vă transporta parfumurile cu stil.</p>
+                    <p>Fiecare set include patru arome distincte: lemnoase, proaspete, picante și acvatice - acoperind toate ocaziile, de la întâlniri de afaceri la aventurile de weekend.</p>
+                    <a href="#products" class="btn">Cumpără Colectia</a>
+                </div>
+                <div class="gift-image-box">
+                    <img src="https://images.unsplash.com/photo-1615634376655-8613c0c06e8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Poza de tip lifestyle cu un bărbat care deschide pachetul cadou">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Ce Spun Clienții Noștri</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Cadou minunat, livrare rapidă, produs unic! Soțul meu l-a iubit."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://picsum.photos/50/50?random=61" alt="Alexandru M.">
+                        </div>
+                        <div>
+                            <h4>Alexandru M.</h4>
+                            <p>Chișinău</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Calitatea este excepțională. Mult mai bine decât mă așteptam. Voi comanda din nou!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://picsum.photos/50/50?random=62" alt="Victor P.">
+                        </div>
+                        <div>
+                            <h4>Victor P.</h4>
+                            <p>Bălți</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Perfect pentru călătorii. Fără scurgeri, arome minunate. Recomand cu încredere pachetul de 4."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://picsum.photos/50/50?random=63" alt="Andrei C.">
+                        </div>
+                        <div>
+                            <h4>Andrei C.</h4>
+                            <p>Bender</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="delivery" id="delivery">
+        <div class="container">
+            <h2>Livrare Rapidă & Sigură</h2>
+            <div class="delivery-content">
+                <div class="delivery-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Livrare Rapidă</h3>
+                    <p>Livrare în toată Moldova în **1-3 zile**</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-box"></i>
+                    <h3>Ambalare Securizată</h3>
+                    <p>Ambalare discretă și protectoare</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-undo-alt"></i>
+                    <h3>Returnări Ușoare</h3>
+                    <p>Politică de returnare de 30 de zile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2>Gata să Impresionezi?</h2>
+            <a href="https://www.instagram.com/direct/t/XXXXXXXXXXXXX" class="btn btn-instagram"><i class="fab fa-instagram"></i> Comandă pe Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">PARFUM<span>SOLID</span></div>
+                    <p>Parfumuri solide premium pentru bărbatul modern din Moldova.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contactează-ne</h3>
+                    <p>Chișinău, Moldova</p>
+                    <p>contact@parfumsolid.md</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Urmărește-ne</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nume_brand" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@nume_brand" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/373XXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 Parfum Solid Moldova. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        
+        // Check for saved theme or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Sticky Header
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==========================================================
+        // ФУНКЦИОНАЛ: МОДАЛЬНЫЕ ОКНА ДЛЯ КАТАЛОГА
+        // ==========================================================
+        const modal = document.getElementById("productModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalGridContainer = modal.querySelector(".modal-grid-container");
+        const closeBtn = modal.querySelector(".close-btn");
+        const productTemplates = document.querySelectorAll(".hidden-product-templates .product-card");
+        
+        // 1. Открытие модального окна при клике на категорию
+        document.querySelectorAll('.category-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                const category = tile.getAttribute('data-category');
+                const title = tile.getAttribute('data-title');
+
+                // Очистка предыдущего содержимого
+                modalGridContainer.innerHTML = '';
+                modalTitle.textContent = title;
+
+                // Заполнение модального окна карточками нужной категории
+                productTemplates.forEach(template => {
+                    if (template.getAttribute('data-category') === category) {
+                        // Клонируем карточку, чтобы избежать перемещения элементов DOM
+                        const cardClone = template.cloneNode(true);
+                        cardClone.style.display = 'block'; // Убедимся, что клон виден
+                        modalGridContainer.appendChild(cardClone);
+                    }
+                });
+
+                // Показать модальное окно
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Запрет скролла фона
+            });
+        });
+
+        // 2. Закрытие модального окна по кнопке "X"
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Возобновление скролла
+        });
+
+        // 3. Закрытие модального окна по клику вне его (на оверлей)
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+        
+        // 4. Закрытие модального окна по кнопке ESC
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "Escape" && modal.style.display === "block") {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // ==========================================================
+        // Scroll Animations (применяется ко всем секциям, кроме модальных)
+        // ==========================================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+
+                    if (entry.target.classList.contains('about-text') || entry.target.classList.contains('gift-text')) {
+                        entry.target.style.transform = 'translateX(0)';
+                    } else if (entry.target.classList.contains('about-icons') || entry.target.classList.contains('gift-image-box')) {
+                        entry.target.style.transform = 'translateX(0)';
+                    } else {
+                         entry.target.style.transform = 'translateY(0)';
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.category-tile, .about-text, .about-icons, .gift-text, .gift-image-box, .testimonial-card, .delivery-item, .cta h2, .cta .btn').forEach(el => {
+            
+            // Set initial state for elements that need translation
+            if (el.classList.contains('about-text') || el.classList.contains('gift-text')) {
+                el.style.transform = 'translateX(-30px)';
+            } else if (el.classList.contains('about-icons') || el.classList.contains('gift-image-box')) {
+                el.style.transform = 'translateX(30px)';
+            } else {
+                el.style.transform = 'translateY(30px)';
+            }
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            observer.observe(el);
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
